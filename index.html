@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>TweetMap</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 80%;
+      }
+
+
+
+li a, .dropbtn {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin: auto;
+   	margin-left: auto;
+    margin-right: auto;
+    width:300px;
+    height:30px;
+  
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: green;
+}
+
+li.dropdown {
+    display: block;
+    margin: auto;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+   
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+  </head>
+  <body>
+    <div id="map"></div>
+	<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown List of Tweet Tags</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#" onclick="initMap1()">#london</a>
+    <a href="#" onclick="initMap2()">#paris</a>
+    <a href="#" onclick="initMap3()">#newyork</a>
+	<a href="#" onclick="initMap4()">#english</a>
+  </div>
+  </div>
+    <script>
+	function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+	}
+	window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+      function initMap() {
+		var myLatLng1 = {lat: 0.0, lng: 0.0};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: myLatLng1
+        });
+      }
+	  
+	  function initMap1() {
+		var myLatLng1 = {lat: 0.0, lng: 0.0};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: myLatLng1
+        });
+
+       	var layer = new google.maps.FusionTablesLayer({
+          query: {
+            select: 'Latitude,Longitude',
+            from: '1HjphD1Kn5iTECSAcAPQlMg2yl-TA_aOeFmS7nmao',
+			
+          }
+        });
+        layer.setMap(map);
+      }
+	  
+	  function initMap2() {
+		var myLatLng1 = {lat: 0.0, lng: 0.0};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: myLatLng1
+        });
+
+       	var layer = new google.maps.FusionTablesLayer({
+          query: {
+            select: 'Latitude,Longitude',
+            from: '1jqKVdGZ6xzi-n2pJmETF1p687rWulH15yHMOoONG',
+			
+          }
+        });
+        layer.setMap(map);
+      }
+	  
+	   function initMap3() {
+		var myLatLng1 = {lat: 0.0, lng: 0.0};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: myLatLng1
+        });
+
+       	var layer = new google.maps.FusionTablesLayer({
+          query: {
+            select: 'Latitude,Longitude',
+            from: '14D7-CHq00eyz2vTppXNO25y4huGKLqvUqn8gQJ35',
+			
+          }
+        });
+        layer.setMap(map);
+      }
+	  
+	  	   function initMap4() {
+		var myLatLng1 = {lat: 0.0, lng: 0.0};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: myLatLng1
+        });
+
+       	var layer = new google.maps.FusionTablesLayer({
+          query: {
+            select: 'Latitude,Longitude',
+            from: '1AXPDyx2Ln5WzWjcdaXNb57jDWs6mTMFD9YFdmP4x',
+			
+          }
+        });
+        layer.setMap(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT9RbTe9sKcc645i45LWkFPZKVKo8zHMs&callback=initMap">
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+URL of the Elastic Beanstalk:
+
+http://myenvironment.8ukz3hai2a.us-east-1.elasticbeanstalk.com/
+
